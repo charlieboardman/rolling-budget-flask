@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+    <title>Rolling Budget</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            font-size: 48px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+
+    <head>
+
+    <body>
+
+        <h1>Past transactions</h1>
+
+        <table border='1' cellspacing='0' cellpadding='5'>
+
+            <tr>
+                <td>Date</td>
+                <td>Amount</td>
+                <td>Vendor</td>
+                <td>Description</td>
+                <td>New Total</td>
+            </tr>
+
+            {% for txn in last_5_txns %}
+
+            <tr>
+                {% for item in txn %}
+                <td>{{ item }}</td> <!-- date, amount, vendor, description, new total -->
+                {% endfor %}
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <br>
+        New Transaction:
+        <br>
+        <form method="post">
+            Amount<input type="text" name="amount" value="{{ request.form['amount']}}"></input><br>
+            Vendor<input type="text" name="vendor" value="{{ request.form['vendor']}}"></input><br>
+            Description<input type="text" name="description" value="{{ request.form['desc']}}"></input><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+
+</html>
