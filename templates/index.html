@@ -37,7 +37,7 @@
                 <td>New Total</td>
             </tr>
 
-            {% for txn in last_5_txns %}
+            {% for txn in last_n_txns %}
 
             <tr>
                 {% for item in txn %}
@@ -53,9 +53,9 @@
         New Transaction:
         <br>
         <form method="post">
-            Amount<input type="text" name="amount" value="{{ request.form['amount']}}"></input><br>
-            Vendor<input type="text" name="vendor" value="{{ request.form['vendor']}}"></input><br>
-            Description<input type="text" name="description" value="{{ request.form['desc']}}"></input><br>
+            Amount spent <input type="text" name="amount_spent" value="{{ request.form['amount_spent']}}"></input><br>
+            Vendor <input type="text" name="vendor" value="{{ request.form['vendor']}}"></input><br>
+            Description <input type="text" name="description" value="{{ request.form['description']}}"></input><br>
             <button type="submit">Submit</button>
         </form>
     </body>
