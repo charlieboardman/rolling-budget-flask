@@ -1,0 +1,5 @@
+#Expenses and income (user defined variables)
+#format: name=value
+#ex: rent=1000
+#monthly_income is the only reserved word, all others are monthly expenses
+#ex: monthly_income=3000

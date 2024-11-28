@@ -67,4 +67,8 @@ def main_page():
     else:
         
         return 'GET and POST requests only'
+    
+@app.route("/budget", methods=('GET','POST')) #Budget calculator page
+def budget_builder():
+    return render_template('budget_builder.html')
 
